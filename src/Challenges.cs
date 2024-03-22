@@ -31,8 +31,8 @@
 
 //             // Challenge 3: Guessing Game
 //             Console.WriteLine("\nChallenge 3: Guessing Game");
-//             // Uncomment to test the GuessingGame method
-//             // GuessingGame(); // Expected outcome: User input until the correct number is guessed or user inputs `Quit`
+            // Uncomment to test the GuessingGame method
+            // GuessingGame(); // Expected outcome: User input until the correct number is guessed or user inputs `Quit`
 
 //             // Challenge 4: Simple Word Reversal
 //             Console.WriteLine("\nChallenge 4: Simple Word Reversal");
@@ -42,3 +42,16 @@
 //         }
 //     }
 // }
+
+
+//2
+
+            //   - SwapObjects(ref num1, str 1) // Error: Objects must be of same types
+            //   - SwapObjects(true, false) // Error: Unsuported type
+
+
+
+
+//3 
+           // Uncomment to test the GuessingGame method;
+            //GuessingGame(); // Expected outcome: User input until the correct number is guessed or user inputs `Quit`
