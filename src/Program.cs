@@ -4,11 +4,10 @@ namespace FunctionChallenges
 {
     class Program
     {
-
         static void Main(string[] args)
         {
 
-//Challenge 1
+            //Challenge 1
             Console.WriteLine("Challenge 1: String and Number Processor");
             StringNumberProcessor("Hello", 100, 200, "World");
 
@@ -32,9 +31,7 @@ namespace FunctionChallenges
                 Console.WriteLine($"{concatenatedString}; {sum}");
             }
 
-
-
-//Challenge 2
+            //Challenge 2
             Console.WriteLine("\nChallenge 2: Object Swapper");
 
             string str1 = "HelloWorld", str2 = "Programming";
@@ -71,26 +68,27 @@ namespace FunctionChallenges
                 }
 
             }
-            //   - SwapObjects(ref num1, str 1) // Error: Objects must be of same types
-            //   - SwapObjects(true, false) // Error: Unsuported type
 
-
-
-
+            //Challenge 3
             Console.WriteLine("\nChallenge 3: Guessing Game");
-            Uncomment to test the GuessingGame method
-            GuessingGame(); // Expected outcome: User input until the correct number is guessed or user inputs `Quit`
 
+            //Challenge 4
+            Console.WriteLine("\nChallenge 4: Simple Word Reversal");
+            
+            string sentence = "This is the original sentence!";
+            string reversed = ReverseWords(sentence);
+            Console.WriteLine(reversed);
 
-
-
-
-
-
-
-
-
-
+            string ReverseWords(string sentence){
+                string[] words = sentence.Split();
+                List<string> reversedWords = [];
+                foreach(string word in words)
+                {
+                     string reversed = string.Join("",word.Reverse());
+                     reversedWords.Add(reversed);
+                }
+                return string.Join(" ",reversedWords);
+            }
         }
     }
 }
