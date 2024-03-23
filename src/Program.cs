@@ -72,22 +72,65 @@ namespace FunctionChallenges
             //Challenge 3
             Console.WriteLine("\nChallenge 3: Guessing Game");
 
+            static void GuessingGame()
+            {
+                Random random = new Random();
+                int numberToGuess = random.Next(1, 101);
+                int attempts = 0;
+                int guess = 0;
+
+                Console.WriteLine("Welcome to the Number Guessing Game!");
+                Console.WriteLine("I have chosen a number between 1 and 100. Try to guess it!");
+
+                while (guess != numberToGuess)
+                {
+                    Console.Write("Enter your guess: ");
+                    string? input = Console.ReadLine();
+
+                    if (!int.TryParse(input, out guess))
+                    {
+                        Console.WriteLine("Please enter a valid number between 1 and 100.");
+                        continue;
+                    }
+                    if (guess < 1 || guess > 100)
+                    {
+                        Console.WriteLine("Please enter a number between 1 and 100.");
+                        continue;
+                    }
+                    attempts++;
+                    if (guess < numberToGuess)
+                    {
+                        Console.WriteLine("Too low! Try again.");
+                    }
+                    else if (guess > numberToGuess)
+                    {
+                        Console.WriteLine("Too high! Try again.");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Congratulations! You've guessed the number {numberToGuess} in {attempts} attempts!");
+                    }
+                }
+            }
+            GuessingGame();
+
             //Challenge 4
             Console.WriteLine("\nChallenge 4: Simple Word Reversal");
-            
+
             string sentence = "This is the original sentence!";
             string reversed = ReverseWords(sentence);
             Console.WriteLine(reversed);
 
-            string ReverseWords(string sentence){
+            string ReverseWords(string sentence)
+            {
                 string[] words = sentence.Split();
                 List<string> reversedWords = [];
-                foreach(string word in words)
+                foreach (string word in words)
                 {
-                     string reversed = string.Join("",word.Reverse());
-                     reversedWords.Add(reversed);
+                    string reversed = string.Join("", word.Reverse());
+                    reversedWords.Add(reversed);
                 }
-                return string.Join(" ",reversedWords);
+                return string.Join(" ", reversedWords);
             }
         }
     }
